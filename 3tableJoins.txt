@@ -1,0 +1,39 @@
+mysql> select * from spotuser;
++---------+-----------+------------------+
+| user_id | user_name | user_email       |
++---------+-----------+------------------+
+|     101 | A         | A@gmail.com      |
+|     102 | B         | B@yahoo.com      |
+|     103 | C         | C@rediffmail.com |
++---------+-----------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from spotplaylist;
++-------------+---------------+-----------------+---------+
+| playlist_id | playlist_name | playlist_desc   | user_id |
++-------------+---------------+-----------------+---------+
+|           1 | Playlist1     | NewTracks       |     101 |
+|           2 | Playlist2     | NewOldTracks    |     102 |
+|           3 | Playlist3     | NewOldMixTracks |     103 |
++-------------+---------------+-----------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from spotuser;
++---------+-----------+------------------+
+| user_id | user_name | user_email       |
++---------+-----------+------------------+
+|     101 | A         | A@gmail.com      |
+|     102 | B         | B@yahoo.com      |
+|     103 | C         | C@rediffmail.com |
++---------+-----------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from spotuser JOIN spotplaylist ON spotuser.user_id = spotplaylist.user_id;
++---------+-----------+------------------+-------------+---------------+-----------------+---------+
+| user_id | user_name | user_email       | playlist_id | playlist_name | playlist_desc   | user_id |
++---------+-----------+------------------+-------------+---------------+-----------------+---------+
+|     101 | A         | A@gmail.com      |           1 | Playlist1     | NewTracks       |     101 |
+|     102 | B         | B@yahoo.com      |           2 | Playlist2     | NewOldTracks    |     102 |
+|     103 | C         | C@rediffmail.com |           3 | Playlist3     | NewOldMixTracks |     103 |
++---------+-----------+------------------+-------------+---------------+-----------------+---------+
+3 rows in set (0.00 sec)

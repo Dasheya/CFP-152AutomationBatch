@@ -1,0 +1,66 @@
+mysql> Create table officers (officer_id int(20),officer_name varchar(25),address varchar(25));
+Query OK, 0 rows affected, 1 warning (0.15 sec)
+
+mysql> Create table students (student_id int(20),student_name varchar(25),course_name varchar(25));
+Query OK, 0 rows affected, 1 warning (0.07 sec)
+
+mysql> select * from officers;
+Empty set (0.01 sec)
+
+mysql> insert into officers values(1,'Ajeet','Mau'
+    -> );
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into officers values(2,'Deepika','Lucknow');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into officers values(3,'Vimal','Faizabad');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into officers values(4,'Rahul','Lucknow');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from officers;
++------------+--------------+----------+
+| officer_id | officer_name | address  |
++------------+--------------+----------+
+|          1 | Ajeet        | Mau      |
+|          2 | Deepika      | Lucknow  |
+|          3 | Vimal        | Faizabad |
+|          4 | Rahul        | Lucknow  |
++------------+--------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> insert into students values(1,'Aryan','Java');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into students values(2,'Rohini','Hadoop');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into students values(3,'Lallu','MangoDB');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from students;
++------------+--------------+-------------+
+| student_id | student_name | course_name |
++------------+--------------+-------------+
+|          1 | Aryan        | Java        |
+|          2 | Rohini       | Hadoop      |
+|          3 | Lallu        | MangoDB     |
++------------+--------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT officers.officer_name, officers.address, students.course_name
+    -> FROM officers
+    -> INNER JOIN students
+    -> ON officers.officer_id = students.student_id;
++--------------+----------+-------------+
+| officer_name | address  | course_name |
++--------------+----------+-------------+
+| Ajeet        | Mau      | Java        |
+| Deepika      | Lucknow  | Hadoop      |
+| Vimal        | Faizabad | MangoDB     |
++--------------+----------+-------------+
+3 rows in set (0.00 sec)
+
+mysql>

@@ -1,0 +1,11 @@
+create table uploadcsv(User_Name varchar(25),First_Name varchar(25),Last_Name varchar(25),Display_Name varchar(25),Job_Title varchar(25));
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> load data infile "C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Import_User_Sample_en.csv"
+    ->     into table uploadcsv
+    ->     fields terminated by ','
+    ->     enclosed by ""
+    ->     lines terminated by '\n'
+    ->     ignore 1 rows;
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Deleted: 0  Skipped: 0  Warnings: 0
