@@ -28,3 +28,4 @@ WHERE Jnumber = 10;
 
 ALTER TABLE players  
 Change city Country varchar(15); 
+
